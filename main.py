@@ -190,23 +190,23 @@ import numpy as np
 
 
 
-# CONTOURS
+# # CONTOURS
 
-img = cv2.imread(os.path.join('.', 'Images', 'birds.jpg'))
-gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-ret, thresh = cv2.threshold(gray_img, 80, 255, cv2.THRESH_BINARY_INV)
+# img = cv2.imread(os.path.join('.', 'Images', 'birds.jpg'))
+# gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# ret, thresh = cv2.threshold(gray_img, 80, 255, cv2.THRESH_BINARY_INV)
 
-contours, heirarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+# contours, heirarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-for contour in contours:
-    # print(cv2.contourArea(contour))
-    if cv2.contourArea(contour) > 50:
-        # cv2.drawContours(img, contour, -1, (0, 0, 250), 1)
+# for contour in contours:
+#     # print(cv2.contourArea(contour))
+#     if cv2.contourArea(contour) > 50:
+#         # cv2.drawContours(img, contour, -1, (0, 0, 250), 1)
 
-        x1, y1, w, h = cv2.boundingRect(contour)
-        cv2.rectangle(img, (x1, y1), (x1 + w, y1 + h), (0, 255, 0), 1)
+#         x1, y1, w, h = cv2.boundingRect(contour)
+#         cv2.rectangle(img, (x1, y1), (x1 + w, y1 + h), (0, 255, 0), 1)
 
-cv2.imshow('BIRDS', img)
-# cv2.imshow('BIRDS_GRAY', gray_img)
-cv2.imshow('BIRDS_TH', thresh)
-cv2.waitKey(0)
+# cv2.imshow('BIRDS', img)
+# # cv2.imshow('BIRDS_GRAY', gray_img)
+# cv2.imshow('BIRDS_TH', thresh)
+# cv2.waitKey(0)
