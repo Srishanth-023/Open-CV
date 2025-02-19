@@ -5,7 +5,7 @@ from PIL import Image
 wc = cv2.VideoCapture(0)
 wc.set(cv2.CAP_PROP_AUTO_WB, 0)
 
-green_bgr = [0, 255, 0]
+bgr = [0, 0, 0]
 
 while True:
     
@@ -17,7 +17,7 @@ while True:
     
     hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    lower_limit, upper_limit = limits(color = green_bgr)
+    lower_limit, upper_limit = limits(color = bgr)
 
     mask = cv2.inRange(hsv_img, lower_limit, upper_limit)
 
