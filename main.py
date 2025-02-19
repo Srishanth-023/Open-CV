@@ -1,9 +1,10 @@
 import cv2
 import os
 import numpy as np
+import imutils
 
-# image = cv2.imread('E:\\Open CV\\Images\\tiger.jpg')
-# print(image.shape)
+image = cv2.imread('E:\\Open CV\\Images\\tiger.jpg')
+print(image.shape)
 
 
 # # READ IMAGE
