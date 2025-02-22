@@ -52,8 +52,7 @@ with mp_face_mesh.FaceMesh(
                     connection_drawing_spec = mp_drawing_styles
                     .get_default_face_mesh_iris_connections_style()
                 )            
-
-
+                
                 # LANDMARKS
 
                 mp.solutions.drawing_utils.draw_landmarks(
