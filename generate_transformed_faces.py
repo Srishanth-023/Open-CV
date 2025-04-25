@@ -70,7 +70,8 @@ for filename in os.listdir(REFERENCE_DIR):
         student_name = os.path.splitext(filename)[0]
 
         image = Image.open(img_path).convert("RGB")
-        student_folder = os.path.join(TRANSFORMED_DIR, student_name)
+        student_folder
+        os.path.join(TRANSFORMED_DIR, student_name)
         os.makedirs(student_folder, exist_ok=True)
 
         for i in range(50):

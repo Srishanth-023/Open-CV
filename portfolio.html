@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fad0c4);
+            animation: gradientBG 6s infinite alternate;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+        @keyframes gradientBG {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+        .container {
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .card-container {
+            perspective: 1200px;
+        }
+        .card {
+            width: 250px;
+            height: 350px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease-in-out, box-shadow 0.4s ease-in-out;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+        .card:hover {
+            transform: rotateY(180deg) scale(1.1);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: transform 0.6s;
+        }
+        .card-front {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: white;
+        }
+        .card-back {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            transform: rotateY(180deg);
+            color: white;
+            padding: 20px;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid white;
+            transition: transform 0.3s;
+        }
+        .card:hover img {
+            transform: scale(1.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio</h1>
+    <div class="container">
+        <div class="card-container" onclick="flipCard(this)">
+            <div class="card">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/100" alt="Member 1">
+                    <h5>John Doe</h5>
+                    <p style="color: yellow;">Engineering</p>
+                    <p style="color: lightblue;">Team Lead</p>
+                </div>
+                <div class="card-back">
+                    <p>Experienced in AI and robotics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-container" onclick="flipCard(this)">
+            <div class="card">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/100" alt="Member 2">
+                    <h5>Jane Smith</h5>
+                    <p style="color: yellow;">Marketing</p>
+                    <p style="color: lightblue;">Creative Head</p>
+                </div>
+                <div class="card-back">
+                    <p>Expert in branding and strategy.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-container" onclick="flipCard(this)">
+            <div class="card">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/100" alt="Member 3">
+                    <h5>Mike Johnson</h5>
+                    <p style="color: yellow;">Development</p>
+                    <p style="color: lightblue;">Full Stack Dev</p>
+                </div>
+                <div class="card-back">
+                    <p>Passionate about web technologies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function flipCard(element) {
+            element.querySelector('.card').classList.toggle('hover');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+yt_dlp
+pydub
+deep_translator
+gtts
